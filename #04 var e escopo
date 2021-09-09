@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+var y = 5
+
+func main3() {
+	y := 10
+	qualquerCoisa(y)
+}
+
+//*Repare que aqui eu chamei o parametro de 'x'
+//*E na func main eu chamei como Y
+//*repare que eu não preciso colocar o mesmo nome, porém preciso por o mesmo valor que é int
+func qualquerCoisa(x int) {
+	fmt.Println(x)
+
+	//*Repare que como a variavel 'y := 10' esta dentro de uma função, nós não conseguimos acessar ela em outra função !!!
+	//*para isso precisamos declarar um var fora da função
+	//*veja como o 'var y = 5' conseguimos acessar agora seu valor
+	fmt.Println(y)
+}
