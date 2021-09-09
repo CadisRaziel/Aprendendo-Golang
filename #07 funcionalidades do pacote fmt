@@ -1,0 +1,103 @@
+package main
+
+import (
+	"fmt"
+)
+
+/*
+=========================================================================================================================
+Strings: são interpretadas de duas fomras no go: Interpreted Strings literal vs Raw String literals.
+Em ciencias da computação  um literal é uma notação para representar um valor fixo no código fonte.
+
+=========================================================================================================================
+TUDO QUE CONTEM NO PACOTE FMT
+func Errorf(format string, a ...interface{}) error
+func Fprint(w io.Writer, a ...interface{}) (n int, err error)
+func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
+func Fscan(r io.Reader, a ...interface{}) (n int, err error)
+func Fscanf(r io.Reader, format string, a ...interface{}) (n int, err error)
+func Fscanln(r io.Reader, a ...interface{}) (n int, err error)
+func Print(a ...interface{}) (n int, err error)
+func Printf(format string, a ...interface{}) (n int, err error)
+func Println(a ...interface{}) (n int, err error)
+func Scan(a ...interface{}) (n int, err error)
+func Scanf(format string, a ...interface{}) (n int, err error)
+func Scanln(a ...interface{}) (n int, err error)
+func Sprint(a ...interface{}) string
+func Sprintf(format string, a ...interface{}) string
+func Sprintln(a ...interface{}) string
+func Sscan(str string, a ...interface{}) (n int, err error)
+func Sscanf(str string, format string, a ...interface{}) (n int, err error)
+func Sscanln(str string, a ...interface{}) (n int, err error)
+type Formatter
+type GoStringer
+type ScanState
+type Scanner
+type State
+type Stringer
+=========================================================================================================================
+
+=========================================================================================================================
+MAIS UTILIZADAS
+
+GRUPO #1: print -> Standart out
+- func Print(a ...interface{}) (n int, err error)
+- func Println(a ...interface{}) (n int, err error)
+- func Printf(format string, a ...interface{}) (n int, err error)
+
+GRUPO #2: Print -> Strings, pode ser usado como variavel
+- func Sprint(a ...interface{}) string
+- func Sprintf(format string, a ...interface{}) string
+- func Sprintln(a ...interface{}) string
+
+GRUPO #3: Print -> File, writer interface, e.g, arquivo ou respostas do servidor
+- func Fprint(w io.Writer, a ...interface{}) (n int, err error)
+- func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+- func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
+=========================================================================================================================
+*/
+
+func main() {
+
+	//=========================================== EXEMPLO DE LITERAL VS RAW =========================================================
+	//? Interpreted Strings literal (\n -> quebra linha, \t -> da um tab, \" -> para por aspas sem dar erro)
+	//*Essa String é interpretada, ou seja, quando ele executa e ve um '\n' ele vai interpreta como uma linha nova
+	//* quando passar pelo '\t' ele vai interpretar para colocar um tab
+	//* quanto passar pelo '\"' vai interpretar que é uma aspas e não o fechamento do código
+	x := "Oi tudo bem com voce?\ncomo vai voce?\tespero que \"esteja\" bem"
+	fmt.Println(x)
+
+	//? Raw String literal (se eu colocar ``, ele não vai interpretar nada e vai manter a frase como esta e mostrar isso por exemplo \n)
+	b := `"Oi tudo bem com voce?\ncomo vai voce?\tespero que \"esteja\" bem"`
+	fmt.Println(b)
+	//===============================================================================================================================
+
+	//========================================== EXEMPLO DOS GRUPOS DE FUNC =========================================================
+	//*Println -> vai mostrar o 'oi' porém vai adicionar uma nova linha abaixo
+	//? Todo print que tem 'ln' no final, ele adiciona uma nova linha abaixo
+	c := "oi"
+	fmt.Println(c)
+
+	//*Print -> ele não coloca a nova linha abaixo
+	d := "ola"
+	fmt.Print(d)
+
+	//---------------------------------------------------------------------
+
+	//*Sprint -> Junta duas strings
+	e := "oie"
+	f := "ois"
+
+	//*Aqui ele vai juntar as duas variaveis 'string' e,f (o Sprint retorna uma string)
+	//?Lembre-se o Sprint vai juntar as duas variaveis porém não vai por espaço entre elas
+	z := fmt.Sprint(e, f)
+	fmt.Println(z)
+
+	//---------------------------------------------------------------------
+
+	//*Fprint -> usado para mandar e receber dados do servidor
+
+	//===============================================================================================================================
+
+}
