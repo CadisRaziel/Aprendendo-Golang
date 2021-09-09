@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+var x bool
+
+func main() {
+	fmt.Println(x) //Zero value
+	x = true
+	fmt.Println(x) //Valor atribuido true
+	x = (10 < 100)
+	//*Uma dica, os () aqui não são necessarios, porém é interessante usar para deixar o código mais legivel
+	y := 10 == 100
+	z := 10 > 100
+
+	fmt.Printf("%v\t%v\t%v\t", x, y, z)
+}
