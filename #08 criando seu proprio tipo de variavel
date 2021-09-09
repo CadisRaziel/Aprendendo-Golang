@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+//? Lembre-se se eu declarar uma variavel com algum tipo exemplo: 'int', 'string' etc... ela vai ser esse tipo até morrer kk
+
+//*O tipo base do hotdog aqui é int
+type hotdog int
+
+var b hotdog
+
+//*Porém porque criar um tipo prórpio nosso do que usar simplesmente o basico
+var c hotdog
+
+//?A resposta é porque quando criamos nosso propio tipo podemos fazer muitas coisas com ele que a gente não pode fazer com o tipo padrao 'var' ou ':='
+//?
+
+func main() {
+	fmt.Printf("%T", b)
+}
