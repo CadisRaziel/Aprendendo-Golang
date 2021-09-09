@@ -1,0 +1,50 @@
+package main
+
+import "fmt"
+
+//*Posso declarar e atribuir variaveis dessa maneira
+//? Qual a diferença aqui é que x e y só funciona dentro do escopo da função main
+//? ja essa variavel aqui fora z ela pode ser usada em qualquer lugar dentro desse 'package main'
+var z = "Olá bom dia2"
+
+//------------------------------------ IMPORTANTE -----------------------------------
+//? A Declaração de variavel 'var z = "Olá" só funciona fora de uma função (code block)
+//? O atribuidor ':=' não funciona aqui fora !
+//----------------------------------------------------------------------------------
+
+func main() {
+
+	//? Atribuidor de variavel
+	//*Diferente das outras linguagens no go usamos ':='
+	//!Repare que eu não preciso especificar o que é a variavel, ele já entende automatico, então cuidado ! (TIPAGEM AUTOMATICA)
+	x := 10
+	y := "Olá bom dia"
+	//? a variavel x e y só funciona aqui dentro dessa 'func main' (o famoso escopo)
+
+	//? Reatribuir a variavel '='
+	//*Podemos reatribuir a variavel caso ela ja exista !
+	//!Repare no sinal é diferente do atribuição !!!
+	x = 20
+
+	//----------------------------------- IMPORTANTE -------------------------------
+	//? Repare nesse exemplo, como o python o go executa linha a linha tambem, ou seja se a variavel estiver abaixo da função a ser executada
+	//? o código não vai entender, por isso as variveis sempre tem que ser declaradas no topo do código ou antes da função !
+	// fmt.Println(a)
+	// a := 5
+	//--------------------------------------------------------------------------------
+
+	//------------------------------------ IMPORTANTE -----------------------------------
+	//? A Atribuição ':=' só funciona dentro de uma função (code block)
+	//----------------------------------------------------------------------------------
+
+	fmt.Println(x, y)
+
+	//*Printf, mostrando o tipo da variavel
+	fmt.Printf("x: %v, %T", x, x)
+	fmt.Printf("x: %v, %T", y, y)
+	fmt.Printf("x: %v, %T", z, z)
+
+	//*Operadores
+	b := 10 + 10
+	println(b)
+}
