@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+func main1() {
+	//? função main é aonde tudo começa e tudo termina tipo no flutter
+	fmt.Println("Hello World")
+
+	//*Repare que no go eu não preciso colcoar tudo dentro de uma unica ""
+	fmt.Println("Hello World", "oi galera", 100)
+
+	//*Vejo o numero de bytes e se tem erro (<nil> quer dizer 'nada')
+	numerobytes, erros := fmt.Println("Hello World", "oi galera", 100)
+	fmt.Println(numerobytes, erros)
+
+	//!Se criarmos uma variavel e não utilizar ela o go vai ficar nos dando um erro
+	//!dizendo que tem uma variavel que não esta declarada !!
+
+	//*Caso nao formos usar algum valor porém precisamos utilizar uma variavel se nao da erro
+	//*Colocamos um '_' underline, com isso informamos ao go que não queremos aquela informação e ele não vai dar erro
+	//*resumindo, estou dizendo que _ é lixo e é para descartar
+	//?abaixo ele não vai mostrar o 26 como acima, ele vai mostrar apenas o <nil>
+	// _, erros := fmt.Println("Hello World", "oi galera", 100)
+	// fmt.Println(numerobytes, erros)
+
+	//*Tipos de variaveis
+	x := 16
+	y := "strings"
+	z := true
+	fmt.Println(x, y, z)
+}
+
+//*Sempre que lermos na documentação e tiver '...' tres pontinhos
+//*isso quer dizer que podemos passar um numero ilimitado de argumentos
