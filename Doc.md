@@ -90,6 +90,136 @@ func funcPrivado() {}
 //função Publica -> começa com letra MAIUSCULA (essa função poderá ser acessada por arquivos fora desse !!)
 func FuncPublica() {}
 ```
+
+## Função com retorno multiplo
+```
+func funTest() (string, int) {
+	return "teste", 2
+}
+
+func funTest1() (string, error) {
+	return "teste", nil
+}
+
+func funTest2() (string, error) {
+	return "teste", errors.New("teste")
+}
+//exemplo de utilizaçao funTest2
+value, err := funcTest2()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(value)
+
+```
+## Passando função como parametro
+```
+//passando funções como parametros
+
+func retornoFun (value func(string, int))  {
+	value("Vitor", 29)
+}
+//exemplo de utilização da retornoFun
+ funcaoTeste := func(test s	tring, testInt int) {
+	 fmt.Println(test, testInt)
+}
+retornoFun(funcaoTeste)
+``` 
+
+## Recebendo função como retorno
+```
+//recebendo funções como retorno
+func retornoZun ( )  func(string, int){
+	recebeFunc :=  func(valorString string, valorInt int){
+		fmt.Println(valorString, valorInt)
+	}
+	return  recebeFunc
+}
+
+//exemplo de utilização da retornoZun
+funcao := retornoZun()
+funcao("Vitor", 29)
+```
+
+## Função com retorno nomeado
+```
+//retorno nomeado
+func funTest3() (retornoString string, retornoError error) {
+	// = -> como ela ja esta instanciada no parametro não precisamos utilizar a atribuição ":=" e sim somente esse operador "="=
+	retornoError = nil
+	retornoString = "test"
+
+	//aqui só damos o retorno
+	return
+}
+```
+
+## Função anonima
+```
+//função anonima
+
+func retornoBoom ( )  func(string, int){
+	func(valorString string, valorInt int){
+		fmt.Println(valorString, valorInt)
+	} ("Vitor", 29)
+	//repare que a função anonima eu coloquei após os "{}" da função
+}
+
+//exemplo de utilização de func anonima
+retornoBoom()
+
+//ou
+
+func anonimato(){
+	func() {
+		fmt.Println(ValorString, valorInt)
+	}()
+}
+```
+
+## Recebendo N parametros para dentro de uma função
+```
+//recebendo N parametros dentro de uma função
+//imagine que quero receber varias strings
+//... -> o que os 3 pontinhos esta dizendo, go eu quero que na variavel "valoresString" aceite 1 ou N parametros de string (com isso posso mandar uma lista de string)
+func muitos(valoresString ...string){
+	for i, x := range valoresString{
+		fmt.Println(i, x)
+	}
+}
+
+//exemplo de utilização
+muitos("Vitor")
+muitos("")
+muitos("Vitor", "a", "b", "c", "d")
+
+//podemos enviar varias funções assim tambem
+func muitosFun(variasFunc ...func()){
+	for _, x := range variasFunc{
+		x()
+	}
+}
+//exemplo de utilização
+func1 := func(){
+	fmt.Println("test")
+}
+muitosFun(func1)
+
+
+func2 := func(){
+	fmt.Println("test")
+}
+func3 := func(){
+	fmt.Println("test")
+}
+func4 := func(){
+	fmt.Println("test")
+}
+
+muitosFun(func2, func3, func4)
+
+```
+
 ## Criando uma Struct e instanciando ela
 ```
 //Structs -> igual objeto(modelo) em outras linguagens
@@ -212,5 +342,21 @@ func initIf2() (string, error) {
 	//porém como variableY é true e anExpression é false, o do while vai entrar pelo menos 1 vez na condição
 	for variableY := true; variableY; variableY = anExpression {
 		fmt.Println("Passou aqui")
+	}
+```
+
+## For com range
+
+```
+//For com range
+	//disponibiliza duas variaveis (o indice / o valor em si)
+	variableZ := []string{"teste,teste,teste"}
+	for i, value := range variableZ {
+		fmt.Println(value, i)
+	}
+
+	//_ -> ignora o valor do indice
+	for _, value := range variableZ {
+		fmt.Println(value)
 	}
 ```
