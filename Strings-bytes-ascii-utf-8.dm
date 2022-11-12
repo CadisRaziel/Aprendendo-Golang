@@ -7,14 +7,6 @@
 [![Instagram Badge](https://img.shields.io/badge/-Instagram-a43b9d?style=flat-square&logo=Instagram&logoColor=white&link=https://https://www.instagram.com/vihhbz/?hl=pt-br/)](https://www.instagram.com/vihhstx/?hl=pt-br/)
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:vitorbrussolo@gmail.com)](mailto:vitorbrussolo@gmail.com)
 
-# Criando sua propria variavel
-
-
-
-
-
-
-
 # Valor e tipo da variavel 
 ```sh
 %v %T -> format strings,
@@ -44,5 +36,4 @@
 		fmt.Printf("%v - %T - %#U - %#x\n", s[i], s[i], s[i], s[i])
 	}
 ```
-
 
