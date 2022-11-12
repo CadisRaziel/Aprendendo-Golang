@@ -1,4 +1,4 @@
-# Golang doc (Itens que estudei e entendi)
+# Golang Fundamentos (Itens que estudei e entendi)
 ## Aqui terá alguns exemplos do código go para ser usado em projetos futuros (de como construir um código em go)
 
 > "A persistencia supera o talento"
