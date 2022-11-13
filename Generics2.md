@@ -90,3 +90,44 @@ func main(){
 	test(vitorTest, vitorTest)
 }
 ```
+
+### Structs e interfaces com tipos parametrizadas
+```sh
+// E se eu quiser definir uma struct na qual o tipo de um dos campos dela
+seja definido posteriormente por outra função
+
+type Setter2[T any] interface {
+	Set(string)
+	*B
+}
+type ListHead[T any] struct {
+	Head *ListElement[T]
+}
+type ListHead[T any] struct {
+	Val T
+}
+func test() {
+	listElementeObject := ListHead[string] {
+           Head: &ListElement[string] {
+		Val: "teste",
+	    },
+	  }
+	  fmt.Println(listElementObject)
+	}
+	
+	//===========
+	
+package main
+
+type User[T any] struct {
+	name T
+	age T
+}
+
+func main(){
+	userTest := User[string] {
+	    name: "vitor",
+	    age: "29",
+	}
+}
+```
