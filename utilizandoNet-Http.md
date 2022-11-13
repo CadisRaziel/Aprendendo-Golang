@@ -18,7 +18,7 @@ import (
 
 func main() {
 
-	//Obs: problemas do pacote http (default do golang)
+	//Obs: problemas do pacote net/http (default do golang)
 	//não conseguimos especificar se é um get/delet/post/put
 	//para saber teriamos que por um switch
 	//switch req.Method {
