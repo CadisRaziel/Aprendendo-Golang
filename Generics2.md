@@ -119,15 +119,16 @@ func test() {
 	
 package main
 
-type User[T any] struct {
+type User[T any, B any] struct {
 	name T
-	age T
+	age B
 }
 
+//Repare que usango generics eu posso tipar ela só na hora que eu vou utiliza-la
 func main(){
-	userTest := User[string] {
+	userTest := User[string, int64] {
 	    name: "vitor",
-	    age: "29",
+	    age: 29,
 	}
 }
 ```
