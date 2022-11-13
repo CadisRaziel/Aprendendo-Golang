@@ -30,12 +30,19 @@ func main() {
 	//	fmt.Println("Rota inválida")
 	//}
 	//e se eu nao especificar a rota, independente do que o usuario chamar ele vai executar
+	
+	
+	
+	
 
 	httpObj := NewHttpInterface()
-
 	//3º -> aqui eu digo pro go que toda requisição(conexões) no /rota-que-eu-quero e toda vez que cair nesse cara, quero que redirecione para o metodo 'httpObj'
 	http.Handle("/rota-que-eu-quero", httpObj)
-
+	log.Fatalln(http.ListenAndServe(":8080", nil))
+	
+	
+	
+	
 	//4º -> uma maneira diferente de fazer o metodo acima e sem precisar do metodo server Http la em baixo
 	//http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
 	//	w.Header().Set("Content-Type", "application/json")
@@ -43,8 +50,6 @@ func main() {
 	//	w.Write([]byte("123"))
 	//	fmt.Fprintf(w, "hello, %q", html.EscapeString(r.URL.Path))
 	//})
-
-	log.Fatalln(http.ListenAndServe(":8080", nil))
 }
 
 type HttpStructImplementation struct {
