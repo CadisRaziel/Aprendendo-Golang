@@ -1,0 +1,2 @@
+Exec -> Insert, Update, Delete
+Query -> Espera alguma resposta de algum comando que voce tentar executar no banco de dados
